@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="working with indexedDB">
+<title>IndexedDB</title>
+
+</head>
+<body>
+<script>
+var log = function (msg, style) {
+  document.getElementById("log").innerHTML += "<div style='" + style + "'>" + msg + "</div>";
+};
+var elog = function (msg) {
+  log(msg, "font-weight:bold; color:red");
+};
+
+log("Running on: " + navigator.userAgent);
+
+indexedDB.deleteDatabase("xxx");
+
+var req = indexedDB.open("xxx");
+req.onerror = function (e) {
+  log("failed to open database, look in console log");
+  console.log(e);
+};
+req.onupgradeneeded = function () {
+  var db = req.result;
+  try {
+    var store = db.createObjectStore("array-keypath", {keyPath: ["a", "c"]});
+    store.put({a:6, b:6, c:7});
+    log("This browser supports using array `keyPath`s.")
+  } catch (e) {
+    elog("This browser does not support using array `keyPath`s: " + e.message);
+  }
+  
+  try {
+    var dk_store = db.createObjectStore("dotted-keypath", {keyPath: "a.b"});
+    dk_store.put({a:{b:7}}).onsuccess = function (e) {
+      log("This browser supports storing objects using dotted `keyPath`s.");
+      var areq = dk_store.get(7);
+      areq.onsuccess = function (e) {
+        if (_.isEqual(e.target.result, {a:{b:7}})) {
+          log("This browser supports retrieving objects stored using dotted `keyPath`s.");
+        } else {
+          elog("This browser does not support retriving objects stored using dotted `keyPath`s.");
+        }
+      }; 
+      areq.onerror = function (e) {
+        elog("This browser does not support retriving objects stored using dotted `keyPath`s.");
+      };
+    };
+  } catch (e) {
+    elog("This browser does not support using dotted `keyPath`s: " + e.message);
+  }
+  
+  try {
+    var store = db.createObjectStore("array-key");
+    store.put({a:6, b:6, c:7}, [5, 6]);
+    log("This browser supports using array keys.")
+  } catch (e) {
+    elog("This browser does not support using array keys: " + e.message);
+  } 
+  
+  try {
+    var store = db.createObjectStore("compound-index");
+    var acIndex = store.createIndex("by_ac", ["a", "c"]);
+    store.put({a:6, c:7}, "foo");
+    
+    log("This browser supports puts when compound indexes are present.")
+    
+    try {
+      var ireq = acIndex.get([6,7]);
+      ireq.onerror = function (e) {
+        console.log(e); 
+        elog("This browser does not support lookup of objects via compound index" + e.message);
+      };
+      ireq.onsuccess = function (e) {
+        if (_.isEqual(e.target.result, {a:6, c:7})) {
+          log("This browser supports lookup of objects via compound index");
+        } else {
+          elog("This browser does not support lookup of objects via compound index");
+        }
+      };
+    } catch (e) {
+      console.log(e);
+      elog("This browser does not support lookup of objects via compound index: " + e.message);
+    }
+  } catch (e) {
+    elog("This browser does not support compound indexes: " + e.message);
+  }
+};
+</script>
+<h3>How is this browser support for IndexedDB?</h3>
+
+
+<div id="log"></div>
+</body>
+</html>

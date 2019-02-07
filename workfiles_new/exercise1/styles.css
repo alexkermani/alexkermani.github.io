@@ -1,0 +1,116 @@
+/* Desktop, fixed width CSS */
+
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/**
+ * Color, typography and basic layout
+ * Colors:
+ * - #CCCCFF -> light blue (background)
+ * - #000066 -> Dark blue (body text, rules)
+ * - #660000 -> Marroon (link text)
+ * - #00A3A3 -> Medium-light blue (navigation and footer background)
+ */
+body {
+	background: #CCCCFF;
+	color: #000066;
+	font: Verdana, Georgia, "Times New Roman", serif;
+}
+a, a:visited {
+  color: #660000;
+}
+p {
+  margin: 0.5em 0.25em;
+}
+h1 {
+  font-size: 1.75em;
+	border: solid #000066;
+	border-width: 2px 0;
+	padding: 0.25em;
+  text-align: center;
+  font-variant: small-caps;
+}
+h2 {
+  text-align: center;
+  font-variant: small-caps;
+}
+dl {
+  margin: 0 0.5em;
+}
+dt {
+  font-weight: bold;
+  margin: 0.5em 1em 0.5em 0;
+  border-bottom: 1px dashed #00A3A3;
+}
+.intro {
+  font-size: 1.15em;
+  line-height: 1.3em;
+  text-align: justify;
+  margin: 0.5em;
+  font-weight: bold;
+}
+.navigation {
+  background-color:#00A3A3;
+  border-bottom: 2px solid #000066;
+}
+.navigation ul li {
+  text-align: center;
+  display: block;
+  float: left;
+  padding: 0.25em 0;
+}
+.navigation li a {
+  color: #f9f3e9;
+  font-variant: small-caps;
+  text-decoration: none;
+}
+.header p {
+  margin-left: -1000px;
+}
+#points ul {
+  list-style-image: url('images/point.png');
+  margin: 0.5em 0 1em 0.5em;
+  padding-left: 1em;
+}
+#points ul li {
+  margin: 0.5em 1em;
+}
+.footer {
+  background-color: #ccccff;
+  color: #000066;
+  text-align: center;
+  padding: .5em 0;
+  font-style: italic;
+}
+
+/* Structure */
+body, .header, .navigation, .footer {
+  width: 960px;
+}
+.header, .navigation, .footer {
+  clear: both;
+}
+.column {
+  margin: 10px 10px 0 0;
+}
+.navigation {
+  min-height: 25px;
+}
+.navigation ul li {
+  width: 320px; /* 960/3 */
+}
+.header {
+  background:url(images/bg.jpg);
+  height: 92px;
+}
+#visit {
+  width: 320px;
+  float: left;
+}
+#main {
+  margin: 10px 0 0 340px;
+  width: 620px;
+}

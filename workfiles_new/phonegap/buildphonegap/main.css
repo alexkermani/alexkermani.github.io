@@ -1,0 +1,10 @@
+* { font-size: 1em; }
+.logo {
+	text-align: center;
+}
+
+.ft {
+        color: #FF0000;
+        font-weight: bold;
+}
+summary { background-color: #9c9c9c; color: white; padding: 10px 0; }

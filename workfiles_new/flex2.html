@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>3-column layout Flexbox</title>
+   <meta charset="utf-8">
+   <meta name="description" content="RWD technique using flexbox layout">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.header {
+  background: coral;
+}
+
+.footer {
+  background: lime;
+}
+
+.main {
+  text-align: left;
+  background: darkcyan;
+}
+
+.aside-1 {
+  background: goldenrod;
+}
+
+.aside-2 {
+  background: indianred;
+}
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 auto; }
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0; }
+  .aside-1 { order: 1; } 
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
+
+body {
+  padding: 2em; 
+}
+   </style>
+</head>
+<body>
+<div class="wrapper">
+  <header class="header">This is the header of my page</header>
+  <article class="main">
+    <h2>Heading of the article</h2>
+    <p>This is just one article in the page. Just one paragraph to test the RWD technique using flexbox. It is a very interesting exercise. Once you learn how to use flexbox and then grid layout, you will see that it is very easy to use.</p>  
+  </article>
+  <aside class="aside aside-1">Here comes the use of aside tag</aside>
+  <aside class="aside aside-2">This is another aside tag</aside>
+  <footer class="footer">Here is the footer</footer>
+</div>
+</body>
+</html>

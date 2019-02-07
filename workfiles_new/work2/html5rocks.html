@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+<title>HTML5 Rocks</title>
+<meta name="description" content="Presenting some nice features of HTML5 and CSS3">
+<meta charset="utf-8">
+<style type="text/css">
+.clipped {position: absolute;
+          top: 10px;
+          left: 500px;
+          clip: rect(10px, 290px, 190px, 10px);}
+#gradient {position:absolute;
+           font-size: 1.5em;
+           background: -moz-linear-gradient(0% 0% 270deg,#00abeb, white, white 50%,#66cc00 51%,white 100%);
+           background: -webkit-gradient(linear, left top, left bottom, from(#00abeb), to(white), color-stop(0.5, white), color-stop(0.5, #66cc00));}
+#gradient:hover {background: -webkit-gradient(radial, 430 50, 0, 430 50, 506, from(red), to(#000));
+                 background-image: -moz-radial-gradient(430px 50px 45deg, circle cover, red 0%, black 100%);}
+
+#gradall {background-color: #F07575;
+          background-image: -webkit-gradient(linear, left top, left bottom, from(hsl(0, 80%, 70%)), to(#BADA55));
+          background-image: -webkit-linear-gradient(top, hsl(0, 80%, 70%), #BADA55);
+          background-image: -moz-linear-gradient(top, hsl(0, 80%, 70%), #BADA55);
+          background-image: -ms-linear-gradient(top, hsl(0, 80%, 70%), #BADA55);
+          background-image: -o-linear-gradient(top, hsl(0, 80%, 70%), #BADA55);
+          background-image: linear-gradient(top, hsl(0, 80%, 70%), #BADA55);}
+</style>
+</head>
+<body>
+<h1>HTML5 Rocks!!!</h1>
+<p><img src="goldengate.jpg" alt="the whole image of the Golgen Gate Bridge"></p>
+<p><img src="goldengate.jpg" alt="clipped image of the Golden Gate Bridge" class="clipped"></p>
+<div id="gradient">
+<p>This is a great example on how to make a background color gradient without the need to any graphical software. Simply using the gradient property of CSS3. You define the area - it could be the whole body of the HTML document or just a small space (a div like this one) - that you apply the gradient property and the browser will gradually change from one color to another color that you have determined in  the CSS.</p>
+</div>
+<div id="gradall">
+<p>Here the gradient is being applied to work in all different browsers. Using the prefixes that are related to the browsers: -o for Opera; -ms for IE; -moz for Mozilla; and -webkit for Safari and Chrome. So, this gradient here should work in all types of browsers!!!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $(".ex .hide").click(function(){
+    $(this).parents(".ex").hide("slow");
+  });
+});
+</script>
+<style type="text/css"> 
+div.ex
+{
+background-color:#e5eecc;
+padding:7px;
+border:solid 1px #c3c3c3;
+}
+</style>
+</head>
+<body>
+
+<h3>Group 1</h3>
+<div class="ex">
+<button class="hide">Hide me</button>
+<p>Click the Hide me button<br> 
+and I will disappear</p>
+</div>
+
+<h3>Group 2</h3>
+<div class="ex">
+<button class="hide">Hide me</button>
+<p>Click this Hide me button<br> 
+Now this part disappears</p>
+</div>
+
+</body>
+</html>

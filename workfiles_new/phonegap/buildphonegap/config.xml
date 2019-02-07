@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+xmlns:gap = "http://phonegap.com/ns/1.0"
+id = "info.cdasilva.mpict"
+version = "1.0.0">
+<access origin="*" />
+<name>App PhoneGap</name>
+<description>This is just to test phone gap</description>
+<author href="http://www.cdasilva.info"
+email="cdasilva@ccsf.edu">Claudia Da Silva
+</author>
+<plugin name="cordova-plugin-whitelist" source="npm" />
+</widget>

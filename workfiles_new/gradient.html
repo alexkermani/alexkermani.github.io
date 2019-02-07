@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Working with webkit-gradient in the background-image</title>
+<style type="text/css">
+#gradient { background-image: -webkit-gradient(linear, left top, right top, from(#f9c), to(#f06));
+/* background-image: -webkit-gradient(linear, left top, right top, color-stop(0.1, #ff99cc), color-stop(0.9, #ff0066)); */
+background-image: -moz-linear-gradient(left center, #ff99cc 10%, #ff0066 90%);
+background-image: -ms-linear-gradient(left, #ff99cc 10%, #ff0066 90%);
+
+-webkit-border-top-left-radius:10px;
+-webkit-border-top-right-radius:10px;
+-webkit-border-bottom-left-radius:10px;
+-webkit-border-bottom-right-radius:10px;
+-moz-border-radius:10px 10px / 10px 10px;
+border-radius:10px;
+width: 360px;
+height:150px; 
+text-align:center;}
+</style>
+</head>
+<body>
+<h1>Testing gradient value for background-image property</h1>
+<div id="gradient">Gradient box</div>
+<p>Hope the box came ok!</p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Transition Effect</title>
+<style type="text/css">
+p {-webkit-transition: color 2s linear 3s;
+   transition: color 2s linear 3s;
+   font-size: 2em;
+   font-family: Arial, Helvetica, sans-serif;
+   color: red; }
+   
+/* transition-property = color, transition-duration = 2s, transition-timing-function = linear, transition-delay = ? */
+/* timing-function default = ease and default duration = 0 */
+p:active, p:hover {font-family: Arial, Helvetica, sans-serif;
+          color: blue; 
+          font-size: 1em; }
+</style>
+</head>
+<body>
+<p>Try having the mouse over one of the paragraphs and see the color changing from red to blue in 2 seconds. The same happens if you click on the paragraph.</p>
+<p>Another paragraph here for you to test.</p>
+<p>This is a third paragraph for you to test one paragraph at a time.</p>
+<p>What about inserting in the p:active property the a different font-size as well? What would happen to the paragraphs?</p>
+</body>
+</html>

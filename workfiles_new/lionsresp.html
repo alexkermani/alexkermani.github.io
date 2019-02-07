@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Images Lions</title>
+   <meta charset="utf-8">
+   <meta name="description" content="images of lions using srcset and sizes attributes">
+   <style>
+    img { width: 100vw; max-width: 100%; }
+	figcaption { font-weight: bold; color: red; font-size: 0.6em; }
+    @media screen and (max-width: 480px) {
+      .resp { width: 50vw; margin: 0 auto; display: block; }
+	  figure { margin: 0 auto; }
+	  figcaption { text-align: center; }
+	}
+   </style>
+</head>
+<body>
+<h1>Only one image downloaded!</h1>
+<p>Use Chrome Dev Tools and then select Network tab and reload the page, then resize the browser and reload the page again to verify that only one image is downloaded to the browser</p>
+<figure>
+<img class="resp" src="lions.jpg" srcset="lions.jpg 1024w, lionswidth400.jpg 400w" sizes="(max-width: 480px) 50vw, 100vw" alt="lions on a tree">
+<figcaption>Beautiful lions</figcaption>
+</figure>
+</ul>
+</body>
+</html>

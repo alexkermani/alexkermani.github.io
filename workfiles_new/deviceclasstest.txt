@@ -1,0 +1,24 @@
+$device_class = NULL;
+if (device_match('is_wireless_device', '===', 'false')) {
+$device_class = 'desktop';
+}
+else if (device_match('https_support', '=== ', 'false') ||
+device_match(' _support', ' ', ' ') ||
+device_match('ajax_manipulate_dom', '===', 'false') ||
+device_match('resolution_width', '<', '176')) {
+$device_class = 'unsupported';
+}
+else if (device_match('is_tablet', '===', 'true')) {
+$device_class = 'tablet';
+}
+else if (device_match('is_wireless_device', '===', 'true') &&
+device_match('resolution_width', '>=', '320') &&
+(device_match('mobile_browser', 'LIKE', 'Safari') ||
+device_match('mobile_browser', 'LIKE', 'Android') ))
+{
+$device_class = 'higher_mobile';
+}
+else if (device_match('is_wireless_device', '===', 'true') &&
+device_match('resolution', '<', '320')) {
+$device_class = 'simpler_mobile';
+}

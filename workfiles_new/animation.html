@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css"> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+animation:myfirst 5s infinite;
+-moz-animation:myfirst 5s infinite; /* Firefox */
+-webkit-animation:myfirst 5s infinite; /* Safari and Chrome */
+-o-animation:myfirst 5s infinite; /* Opera */
+position: relative;
+}
+
+@keyframes myfirst
+{
+from {background:red; left:0px; top:0px;}
+to {background:yellow; left:200px; top:0px;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+from {background:red; left:0px; top:0px;}
+to {background:yellow; left:200px; top:0px;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {background:red; left:0px; top:0px;}
+to {background:yellow; left:200px; top:0px;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+from {background:red;}
+to {background:yellow;}
+}
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer.</p>
+
+<div></div>
+
+</body>
+</html>

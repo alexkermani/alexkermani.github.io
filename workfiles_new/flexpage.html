@@ -1,0 +1,40 @@
+<!Doctype html>
+<html lang="en">
+<head>
+  <title>Flexboxes</title>
+  <meta charset="utf-8">
+  <meta name="description" content="working with flexbox for RWD">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+     #wrapper { width: 100%; display:flex; flex-wrap: wrap;}
+     header { width: 100%;  height: 100px; background-color: lime; }
+     nav { width: 100%; height: 60px; background-color: lightblue;}
+     #logo1, #logo2 { width: 50%; height: 80px; }
+     main { width: 60%; height: 200px; background-color: yellow; }
+	 #side1, #side2 { width: 20%; height: 200px; }
+	 #logo1, #side1 { background-color: red; }
+	 #logo2, #side2 { background-color: violet; }
+	 
+	 @media screen and (max-width:480px) {
+	    header { order: 1; }
+		#logo1 { order: 2; }
+		#logo2 { order: 3; }
+		nav { order: 4; }
+		main { order: 6; }
+		#side1 { order: 5; }
+		#side2 { order: 7; }
+	 }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+   <header><h1>My header</h1></header>
+      <nav><p>My menu here</p></nav>
+   <div id="logo1">Image left</div>
+   <div id="logo2">Another right</div>
+   <main><p>Main content here</p></main>
+   <aside id="side1">Aside 1</aside>
+   <aside id="side2">Aside 2</aside>
+</div>
+</body>
+</html>

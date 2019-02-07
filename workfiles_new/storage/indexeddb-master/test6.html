@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+</head>
+    
+<body>
+
+<script>
+var db;
+
+function indexedDBOk() {
+	return "indexedDB" in window;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+
+	//No support? I'm sorry, nothing will be done!
+	if(!indexedDBOk) return;
+	
+	var openRequest = indexedDB.open("idarticle_people",1);
+
+	openRequest.onupgradeneeded = function(e) {
+		var thisDB = e.target.result;
+
+		if(!thisDB.objectStoreNames.contains("people")) {
+			thisDB.createObjectStore("people");
+		}
+	}
+
+	openRequest.onsuccess = function(e) {
+
+		db = e.target.result;
+
+		//Listen for add clicks in the button with id = addButton
+		document.querySelector("#addButton").addEventListener("click", addPerson, false);
+	}	
+
+	openRequest.onerror = function(e) {
+		//Do something for the error
+	}
+
+
+},false);
+
+
+function addPerson(e) {
+	var name = document.querySelector("#name").value;
+	var email = document.querySelector("#email").value;
+
+	alert("We will add "+name+"/"+email);
+    
+	// the transaction with the table and the transaction type - readwrite as we are adding data
+	var transaction = db.transaction(["people"],"readwrite");
+	var store = transaction.objectStore("people");
+
+	//Define a person
+	var person = {
+		name:name,
+		email:email,
+		created:new Date()
+	}
+
+	//Perform the add
+	var request = store.add(person,1);
+
+	request.onerror = function(e) {
+		alert("Error",e.target.error.name);
+		//some type of error handler
+	}
+
+	request.onsuccess = function(e) {
+		alert("Yes! We did it!");
+	}
+}
+</script>
+
+<input type="text" id="name" placeholder="Name"><br/>
+<input type="email" id="email" placeholder="Email"><br/>
+<button id="addButton">Add Data</button>
+
+</body>
+</html>

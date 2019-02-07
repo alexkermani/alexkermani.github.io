@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Simple use of Service Worker">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Using Service Worker</title>
+    <script>
+      // Add a global error event listener early on in the page load, to help ensure that browsers
+      // which don't support specific functionality still end up displaying a meaningful message.
+      window.addEventListener('error', function(error) {
+        if (ChromeSamples && ChromeSamples.setStatus) {
+          console.error(error);
+          ChromeSamples.setStatus(error.message + ' (Your browser may not support this feature.)');
+          error.preventDefault();
+        }
+      });
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    
+  </head>
+
+  <body>
+    
+    <h1>Basic Service Worker Sample</h1>
+    <p>This page will demonstrate a basic service worker that you can use later on and customize accordingly</p>
+
+    <h3>Demo with images</h3>
+    <p>The first time you request one of the images, the service worker will be load it from the network, but the next time, it will be retrieved from the cache.</p>
+    <label for="images">Choose the Image to be shown:</label>
+    <select id="images">
+      <option value="images/rain.png">Rain Symbol</option>
+      <option value="images/scattered-showers.png">Scattered Showers Symbol</option>
+      <option value="images/snow.png">Snow Symbol</option>
+    </select>
+    <button id="show">Show Icon Selected</button>
+    <div id="container"></div>
+    
+      <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('service-worker.js');
+        }
+
+        document.querySelector('#show').addEventListener('click', () => {
+          const iconUrl = document.querySelector('select').selectedOptions[0].value;
+          let imgElement = document.createElement('img');
+          imgElement.src = iconUrl;
+          document.querySelector('#container').appendChild(imgElement);
+        });
+      </script>
+
+  </body>
+</html>

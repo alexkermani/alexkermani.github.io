@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Customer Profile</title>
+ <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+ <script>
+$(function () {
+    $("#Submit").click(function () {
+        var customerProfile = {
+            "FirstName": $("#txtFirstName").val(),
+            "LastName": $("#txtLastName").val(),
+            "Address": $("#txtAddress").val(),
+            "City": $("#txtCity").val(),
+            "ContactNo": $("#txtContactNo").val(),
+            "EMailID": $("#txtEmailID").val(),
+        };
+        if (Modernizr.localstorage) {
+            var localCustomerProfile = window.localStorage;
+            var custProfile=JSON.stringify(customerProfile);
+            localCustomerProfile.setItem("Profile", custProfile);
+            window.location.href = "order.html";
+        }
+    });
+});
+</script>
+</head>
+<body>
+<section id="contact" class="grad">
+<h1>Customer Profile Form</h1>
+<table>
+<tr>
+<td style="width:30%;">First Name</td>
+<td style="width:70%;"><input id="txtFirstName" type="text" placeholder="Enter First Name" autofocus></td>
+</tr>
+<tr>
+<td style="width:30%;">Last Name</td>
+<td style="width:70%;"><input id="txtLastName" type="text" placeholder="Enter Last Name"></td>
+</tr>
+<tr>
+<td style="width:30%;">Address</td>
+<td style="width:70%;"><input id="txtAddress" type="text" placeholder="Enter Your Address"></td>
+</tr>
+<tr>
+<td style="width:30%;">City</td>
+<td style="width:70%;"><input id="txtCity" type="text" placeholder="Enter City Name"></td>
+</tr>
+<tr>
+<td style="width:30%;">Contact No.</td>
+<td style="width:70%;"><input id="txtContactNo" type="tel" placeholder="Enter Telephone"></td>
+</tr>
+<tr>
+<td style="width:30%;">Email ID</td>
+<td style="width:70%;"><input id="txtEmailID" type="email" placeholder="Enter Email Address"></td>
+</tr>
+<tr>
+<td style="width:100%; text-align:center;" colspan="2"><input id="Submit" type="submit" value="Submit Profile"></td>
+</tr>
+</table>
+</section>
+</body>
+</html>

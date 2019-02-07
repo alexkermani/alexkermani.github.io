@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Geolocation</title>
+  
+     <script>
+     function getloc() {
+	 
+	navigator.geolocation.getCurrentPosition(get_coords,if_error);
+	 
+	function get_coords(position)
+	{
+	latitude=position.coords.latitude;
+	longitude=position.coords.longitude;
+	 
+	alert('Latitude is '+latitude+' and longitude is '+longitude);
+	}
+	 
+	function if_error(err)
+	{
+	if(err.code==1){alert('User Denied');}
+	if(err.code==2){alert('Position unavailable');}
+	if(err.code==3){alert('Timeout');}
+	}
+	} 
+	</script>
+</head>
+<body>
+<h1>Geolocation in Action</h1>
+<form action="#" method="get">
+  <input type="submit" value="Get Location" onClick="getloc();">
+</form>
+</body>
+</html>

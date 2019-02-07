@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Transition and Transform together</title>
+<style>
+.mommy {
+    width:300px;
+    height:56px;
+    background-color:hsla(340, 50%, 60%, .6);
+    position:absolute;
+    left:240px;
+}
+.daddy {
+    visibility:visible;
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    background-image: linear-gradient(90deg, hsla(10, 90%, 50%, 1) 50%, hsla(100, 90%, 50%, .0) 50%);
+    position:absolute;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transition:0s;
+    transition:0s;
+}
+
+.mommy:hover ~ .daddy {
+    visibility:visible;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 6s ease-in 2s;  /* change .6 to 6s and it will take longer to rotate the class .daddy */
+    transition: 6s ease-in 2s;
+}
+.baby {
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background-image: linear-gradient(90deg, hsla(5, 35%, 50%, 1) 50%, hsla(100, 90%, 50%, .0) 50%);
+    position: relative;
+    top: 10px;
+    left: 10px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition:0s;
+    transition:0s;
+}
+.mommy:hover ~ .daddy > .baby {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transition: 6s ease-in 5s;
+    transition: 6s ease-in 5s;
+}
+
+</style>
+</head>
+<body>
+<div class="mommy"></div>
+<div class="daddy">
+    <div class="baby"></div>
+</div>
+</body>
+</html>

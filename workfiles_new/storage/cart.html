@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>See Your Order Details</title>
+ <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script>
+$(function () {
+    if (Modernizr.localstorage) {
+        var localData = window.localStorage;
+        var orderData = JSON.parse(localData.getItem("myOrder"));
+        var profile = JSON.parse(localData.getItem("Profile"));
+
+        $('#ContactName').text(profile.FirstName + ' ' + profile.LastName)
+        $('#ContactNo').text(profile.ContactNo);
+        $("#OrderID").text(orderData.OrderID);
+        $("#OrderDate").text(orderData.OrderDate);
+        $("#RequiredDate").text(orderData.RequiredDate);
+        $("#UnitPrice").text(orderData.Price);
+        $("#Qty").text(orderData.Qty);
+        $("#TotalPrice").text(orderData.TotalPrice);
+        $("#ShippingAddress").text(orderData.Address);
+        $("#ShippingCity").text(orderData.City);
+    }
+});
+</script>
+</head>
+<body>
+<div id="orderContainer">
+<h1>Your Order Details</h1>
+<h2>Total Items in Your Cart</h2>
+<h3>Contact Name - [<span id="ContactName"></span>]</h3>
+<h3>Contact No   - [<span id="ContactNo"></span>]</h3>
+<div>
+<table border="1">
+<thead>
+    <tr>
+        <th>Order Id</th>
+        <th>Order Date</th>
+        <th>Required Date</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Total Amount</th>
+        <th>Shipping Address</th>
+        <th>Shipping City</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td><span id="OrderID"></span></td>
+        <td><span id="OrderDate"></span></td>
+        <td><span id="RequiredDate"></span></td>
+        <td>$<span id="UnitPrice"></span></td>
+        <td><span id="Qty"></span></td>
+        <td>$<span id="TotalPrice"></span></td>
+        <td><span id="ShippingAddress"></span></td>
+        <td><span id="ShippingCity"></span></td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

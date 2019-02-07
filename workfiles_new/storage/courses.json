@@ -1,0 +1,11 @@
+{
+
+    "courses": [
+
+        {   "name"   : "CNIT 133M",          "instructor"    : "Claudia Da Silva"        },
+        {   "name"   : "CNIT 113",          "instructor"    : "Abigail Bornstein"        },
+        {   "name"   : "CNIT 133",          "instructor"    : "Steve Rubin"        },
+        {   "name"   : "CNIT 131H",          "instructor"    : "Claudia Da Silva"        }
+    ]
+
+}

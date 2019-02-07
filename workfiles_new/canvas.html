@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+<title>Working with Canvas</title>
+<meta name="description" content="Working with Canvas">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="canvas.css">
+<script>
+function drawSquare() {
+   var canvas = document.getElementById("c1");
+   var context = canvas.getContext("2d");
+   context.fillStyle = "rgb(13, 118, 208)";
+   context.fillRect(30, 30, 150, 150);
+   }
+   
+function eraseSquare() {
+   var canvas = document.getElementById("c1");
+   canvas.width = canvas.width;
+   }
+   
+ function drawOct() {
+   var canvas = document.getElementById("oct");
+   var context = canvas.getContext("2d");
+   context.beginPath();
+   context.moveTo(200,0);
+   context.lineTo(400,0);
+   context.lineTo(600,200);
+   context.lineTo(600,400);
+   context.lineTo(400,600);
+   context.lineTo(200,600);
+   context.lineTo(0,400);
+   context.lineTo(0,200);
+   context.closePath();
+   context.fillStyle= "#ff0000";
+   context.fill();
+   }
+
+ function drawimg() {
+   var canvas = document.getElementById("img1");
+   var context = canvas.getContext("2d");
+   var img = new Image();
+   img.src = "goldengate.jpg";
+   img.onload = function() { context.drawImage(img, 10,45); context.drawImage(img, 30, 45, 20, 35, 50, 380, 45, 50); }
+   } 
+</script>
+</head>
+<body>
+<section id="main">
+  <h1>Working with Canvas</h1>
+  <canvas id="c1" width="200" height=200" onclick="drawSquare();" ondblclick="eraseSquare();"></canvas>
+  <p>Another canvas below</p>
+  <canvas id="oct" width="700" height="700" onclick="drawOct();"></canvas>
+  <p>Canvas with image</p>
+  <canvas id="img1" width="700" height="700" onclick="drawimg();"></canvas>
+</section>
+</body>
+</html>

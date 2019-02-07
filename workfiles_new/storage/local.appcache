@@ -1,0 +1,8 @@
+CACHE MANIFEST
+# Comments
+storage1.html
+main.css
+offline.gif
+
+FALLBACK:
+online.gif offline.gif 

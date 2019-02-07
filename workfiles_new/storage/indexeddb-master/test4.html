@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Demo 4</title>
+	</head>
+	<body>
+		
+	<script>
+    var idbSupported = false;
+    var db;
+    
+    document.addEventListener("DOMContentLoaded", function(){
+	
+        if("indexedDB" in window) {
+            idbSupported = true;
+        }
+        
+        if(idbSupported) {
+            var openRequest = indexedDB.open("test_v2",1);
+
+            openRequest.onupgradeneeded = function(e) {
+                alert("running onupgradeneeded");
+                var thisDB = e.target.result;
+                // one of the properties of thisDB is objectStoreNames - we can use the contains method to see
+				// if your object store exists and, if not, create it
+                if(!thisDB.objectStoreNames.contains("firstOS")) {
+                    thisDB.createObjectStore("firstOS");
+                }
+
+            }
+            
+            openRequest.onsuccess = function(e) {
+                alert("Success!");
+                db = e.target.result;
+            }
+        
+            openRequest.onerror = function(e) {
+                alert("Error");
+                console.dir(e);
+            }
+            
+        }
+	
+    },false);
+		
+	</script>	
+	</body>
+</html>

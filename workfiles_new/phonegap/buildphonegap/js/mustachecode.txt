@@ -1,0 +1,3 @@
+var notedata = {notetitle:"", notedetail:"", imagesource:"", notelat:"", notelon:""};
+
+		var notetemplate = '<input type="text" name="notetitle" id="notetitle" value="{{notetitle}}" placeholder="Note Title"/><textarea cols="40" rows="8" name="notedetail" id="notedetail" placeholder="Note Detail">{{notedetail}}</textarea><input id="addphoto" type="button" data-icon="plus" value="Add a Photo" /><img id="noteimage" src="{{imagesource}}" /><div id="map">Map Placeholder</div><input id="savenote" type="button" data-theme="a" value="Save Note" />';

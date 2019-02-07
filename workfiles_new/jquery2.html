@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#p1").hover(function(){
+  alert("You entered p1!");
+  });
+
+$("input").focus(function(){
+  $(this).css("background-color","#cccccc");
+});
+});
+</script>
+</head>
+<body>
+<p id="p1">Try moving the mouse over this paragraph...</p>
+<p>What about this one?</p>
+<p>What about this third paragraph?</p>
+<form>
+<input type="text" placeholder="type your name">
+</form>
+</body>
+</html>

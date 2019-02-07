@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset = "UTF-8">
+ <meta name="description" content="simple JS example">
+ <title>Example JS</title>
+ <style>
+   .msg { font-weight: bold; font-style:italic; color:red; }
+   .none { display: none; }
+ </style>
+  <script language="JavaScript">
+    function buyTickets() {
+	    var name = document.getElementById('yourname').value;
+		var qty = parseInt(document.getElementById('tickets').value);
+		if (((name != null) || (name != "")) && ((qty >= 1) && (qty < 6))) {
+		var finalcost = qty * 10.00;
+		var finalmsg = "Hi, " + name + " thanks for your request! You will pay " + finalcost + " for the " + qty + " tickets";
+        document.getElementById('display').className = "msg";
+		document.getElementById('display').innerHTML = finalmsg;
+		
+                 //   document.getElementById("user_input").value;
+        } else {
+          document.getElementById('display').className = "none";
+          alert("Make sure you type your name and the quantity of tickets needs to be between 1 and 5");
+        }		  
+    }
+  </script>
+
+  </head>
+<body>
+
+  <form>
+    <label for="yourname">Type your name: </label>
+    <input type="text" id="yourname">
+	<label for="tickets">Number of tickets: </label>
+	<input type="number" id="tickets" min="1" max="5">
+  </form>
+
+  <input type="submit" onclick="buyTickets();"><br/>
+  <p><span id='display'></span></p>
+</body>
+</html>

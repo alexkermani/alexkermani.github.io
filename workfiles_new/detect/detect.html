@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+<title>Detecting Mobile</title>
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="detectmobilebrowser.js"></script>
+</head>
+<body>
+<p id="id1"></p>
+<script>
+if (jQuery.browser.mobile)
+{
+   $("#id1").text("You are using a mobile device"); 
+}
+else
+{
+   $("#id1").text("You are not using a mobile device");
+}
+</script>
+</body>
+</html>

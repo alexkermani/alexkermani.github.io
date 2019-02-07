@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Geolocation example: Checking for geolocation support</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Remove this line in production. -->
+</head>
+
+<body>
+  <p>
+    <input type="button" onclick="show_islocationenabled();" value="Is Geolocation supported?" />
+  </p>
+  <div id="str1"></div>
+  <div id="str2"></div>
+  <script>
+  
+    function get_coords(position)
+	{
+	latitude=position.coords.latitude;
+	longitude=position.coords.longitude;
+	 str2= ' - Latitute is '+latitude+' and longitude is '+longitude;
+	str = str1.concat(str2);
+		    document.getElementsByTagName('div')[0].textContent = str;
+	}
+	
+	function if_error(err)
+	{
+	if(err.code==1){str2= ' User denied'; str = str1.concat(str2);}
+	if(err.code==2){str2= ' Position unavailable'; str = str1.concat(str2);}
+	if(err.code==3){str2= ' Time Out'; str = str1.concat(str2);}
+		    document.getElementsByTagName('div')[0].textContent = str;
+	}
+	
+    function show_islocationenabled() {
+      var str = "No, geolocation is not supported.";
+
+      if (window.navigator.geolocation) {
+        str1 = "Yes, geolocation is supported.";
+		navigator.geolocation.getCurrentPosition(get_coords,if_error);
+		
+      }
+    }
+	
+
+  </script>
+</body>
+</html>
