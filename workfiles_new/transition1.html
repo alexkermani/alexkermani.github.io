@@ -3,18 +3,18 @@
 <head>
 <title>Transition Effect</title>
 <style type="text/css">
-p {-webkit-transition: color 2s linear 3s;
-   transition: color 2s linear 3s;
-   font-size: 2em;
+div {-webkit-transition: border 1s linear 3s;
+   transition: border 1s linear 3s;
+   font-size: 1em;
    font-family: Arial, Helvetica, sans-serif;
-   color: red; 
-   width: 500px}
+   }
    
 /* transition-property = color, transition-duration = 2s, transition-timing-function = linear, transition-delay = ? */
 /* timing-function default = ease and default duration = 0 */
-p:active, p:hover {font-family: Arial, Helvetica, sans-serif;
-          color: blue; 
-          font-size: 1em; }
+div:active, div:hover {font-family: Arial, Helvetica, sans-serif; 
+          border: 1px solid red;
+          font-size: 1em;
+          width: 400px; }
 .div1 {  width: 300px;
          height: 100px;
          border: 1px solid blue;}
