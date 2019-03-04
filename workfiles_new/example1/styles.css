@@ -19,7 +19,8 @@
 body {
 	background: #f9f3e9;
 	color: #594846;
-	font: "Adobe Caslon Pro", Georgia, "Times New Roman", serif;
+  font-family: "Adobe Caslon Pro", Georgia, "Times New Roman", serif;
+  font-size: 100%;
 }
 
 a, a:visited {
@@ -105,8 +106,10 @@ dt {
 
 /* Structure */
 
+@media screen and (min-width: 481px) {
+
 body, .header, .navigation, .footer {
-  width: 960px;
+  width: 100%;
 }
 
 .header, .navigation, .footer {
@@ -122,8 +125,10 @@ body, .header, .navigation, .footer {
 }
 
 .navigation ul li {
-  width: 320px; /* 960/3 */
+  width: 33.33333%;
 }
+
+img, iframe { max-width: 100%; }
 
 .header {
   background:url(images/w.png) no-repeat;
@@ -131,16 +136,37 @@ body, .header, .navigation, .footer {
 }
 
 #visit {
-  width: 240px;
+  width: 25%;
   float: left;
 }
 
 #points {
-  width: 240px;
+  width: 25%;
   float: right;
 }
 
 #main {
-  margin: 10px 260px 0 250px;
-  width: 460px;
+  margin: 10px  27.08333%    0    26.04166%;
+  width: 47.91666%;
+}
+}
+
+/* Added below as part of lecture/homework */
+@media screen and (max-width:480px) {
+body, .header, .footer, .navigation {
+  width: 320px;
+}
+
+.column {
+  margin: 10px 0;
+  border-bottom: 1px dashed #7b96bc
+}
+
+.navigation ul li {
+  width: 106.6667px;
+}
+
+#visit, #points, #main {
+  width: 320px
+}
 }

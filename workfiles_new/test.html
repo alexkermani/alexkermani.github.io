@@ -1,0 +1,63 @@
+<html>
+
+<head>
+
+    <style>
+        .flexcontainer {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .violet {
+            background-color: violet;
+        }
+
+        @media screen and (max-width: 480px) {
+            .red {
+                order: 2;
+            }
+
+            .blue {
+                order: 1;
+            }
+
+            .yellow {
+                order: 4;
+            }
+
+            .violet {
+                order: 3;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="flexcontainer">
+        <div class="box red"></div>
+        <div class="box blue"></div>
+        <div class="box yellow"></div>
+        <div class="box violet"></div>
+    </div>
+</body>
+
+</html>

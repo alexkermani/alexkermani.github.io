@@ -65,9 +65,9 @@
 						job as a front end dev!</li>
 				</ul>
 				<button id="start">Start Animation</button>
-
+				<!--
 				<script>
-					$("#start").click(function () {
+					$("title").on('click', "button#start", function(){
 						$("#title").animate({
 							fontSize: "1.5em",
 						});
@@ -79,6 +79,22 @@
     					$("img").css('border', "solid 5px #ff7b25");  
 					});
 				</script>
+				-->
+				 
+				<script>
+					 $("#start").click(function () {
+						$("#title").animate({
+							fontSize: "1.5em",
+						});
+						$("#title").animate({
+							fontSize: "1em",
+						});
+						$("#block").addClass("pblue");
+
+    					$("img").css('border', "solid 5px #ff7b25");  
+					});
+				</script>
+				
 
 			</div>
 		</div>

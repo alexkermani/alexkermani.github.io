@@ -87,30 +87,51 @@ dt {
 }
 
 /* Structure */
+@media screen and (min-width:481px){
 body, .header, .navigation, .footer {
-  width: 960px;
+  width: 100%;
 }
 .header, .navigation, .footer {
   clear: both;
 }
 .column {
-  margin: 10px 10px 0 0;
+  margin: 10px 1.04166% 0 0;
 }
 .navigation {
   min-height: 25px;
 }
 .navigation ul li {
-  width: 320px; /* 960/3 */
+  width: 33.33333%; /* 960/3 */
 }
 .header {
   background:url(images/bg.jpg);
   height: 92px;
 }
 #visit {
-  width: 320px;
+  width: 33.33333%;
   float: left;
 }
 #main {
-  margin: 10px 0 0 340px;
-  width: 620px;
+  margin: 10px 0 0 35.41666%;
+  width: 64.58333%;
+}
+}
+
+@media screen and (max-width:480px) {
+  body, .header, .footer, .navigation {
+    width: 320px;
+  }
+  
+  .column {
+    margin: 10px 0;
+    border-bottom: 1px dashed #7b96bc
+  }
+  
+  .navigation ul li {
+    width: 106.6667px;
+  }
+  
+  #visit, #points, #main {
+    width: 320px
+  }
 }
