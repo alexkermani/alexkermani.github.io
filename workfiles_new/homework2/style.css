@@ -1,26 +1,56 @@
 	#wrapper {
-		width: 100%;
-		display: flex;
-		flex-flow: wrap;
-		flex-direction: row;
+	    width: 100%;
+	    display: flex;
+	    flex-flow: wrap;
+	    flex-direction: row;
 	}
 
 	#wrapper>* {
 	    padding: 2.5%;
 	}
 
+	/* --- CSS3 Animations --- */
+
+	.subtitle {
+	    color: red;
+	    height: 1.5rem;
+	    animation: heartbeat 1.2s infinite;
+	}
+
+	@keyframes heartbeat {
+	    0% {
+	        transform: scale( .95);
+	    }
+	    20% {
+	        transform: scale( 1);
+	    }
+	    40% {
+	        transform: scale( .95);
+	    }
+	    60% {
+	        transform: scale( 1);
+	    }
+	    80% {
+	        transform: scale( .95);
+	    }
+	    100% {
+	        transform: scale( .95);
+	    }
+	}
+
 	/* --- Desktop --- */
+
 	@media screen and (min-width: 481px) {
 	    #header,
 	    #footer {
-			clear: both;
-			width: 100%;
+	        clear: both;
+	        width: 100%;
 	    }
 	    .sidebar-left {
-			width: 20%;
+	        width: 20%;
 	    }
 	    .col-right {
-			width: 70%;
+	        width: 70%;
 	    }
 	    #header {
 	        order: 1;
@@ -37,6 +67,7 @@
 	}
 
 	/* --- Mobile --- */
+
 	@media screen and (max-width: 480px) {
 	    #header,
 	    #footer,
@@ -45,14 +76,13 @@
 	        width: 100%;
 	    }
 	    #header {
-			order: 1;
+	        order: 1;
 	    }
 	    .sidebar-left {
-			order: 2;
+	        order: 2;
 	    }
 	    .col-right {
-			order: 3;
-			
+	        order: 3;
 	    }
 	    #footer {
 	        order: 4;
@@ -113,10 +143,6 @@
 	    /* by declaring a width on any block element (like a div), giving it a css property of margin:0 auto will center that block element on page */
 	    min-height: 130px;
 	    /* setting a minimum height of an element means that it can grow to be bigger, if there is a lot of content in it. However, if it doesn't have enough content, it will be at the very least (in this example) 130 pixels tall */
-	    /*padding: 45px 15px 15px;
-	    /* by setting a padding, the content within a HTML element will not touch the edges of that element (by adding padding to an element, it actually makes that element appear wider and/or taller.  In this case, the header div is now 15px wider and taller on each side. */
-		/*width: 870px;
-	    /* sets the width of the div to 900px. Remember that if you add padding to this element it will increase the size by the number of pixels in the padding. In this example the width is 900px and we have 15px to the left and right so the total width of the header will be (870px + 15px+15px=930px */
 	}
 
 	ul.navigation {
@@ -154,24 +180,6 @@
 	    background-color: #000;
 	    /*this is a hover pseudo class.  By designating a different background color, than the class for the a tag above, when a mouse hovers over these particular links, in the navigation bar, the background color will change to what's defined here */
 	}
-/*
-	div.content {
-	    margin: 15px auto;
-	    /* this adds a margin of 15px to the top and bottom of the div with the class of content.  The auto margin applies to the left and right side of the div which is what centers the div in the middle of the page.
-	    width: 900px;
-	} */
-
-	/*div.col-right {
-	    float: right;
-	    width: 660px
-	}*/
-
-	/*div.sidebar-left {
-	    float: left;
-	    padding: 0 10px;
-	    width: 200px;
-	    /* when floating content next to each other, applying set widths will make the content play nice with each other. Change the width of the siebar, or take away the width of the above "div.col-right" and see what happens to get a better idea of how widths effect floats
-	} */
 
 	div.sidebar-left a {
 	    color: #445e64;
