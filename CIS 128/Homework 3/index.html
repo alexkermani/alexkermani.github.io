@@ -1,4 +1,4 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -107,9 +107,9 @@
           <div class="ui-block-a">
             <p>The classic Koosh! This 90's delight will entertain even the most joyless child, guaranteed.</p>
           </div>
-          <div class="ui-block-b"> 
+          <div class="ui-block-b">
             <div class="image">
-              <img src="images/607px-KOOSH.png" alt="Koosh Ball" style="width:80%;"/>
+              <img src="images/607px-KOOSH.png" alt="Koosh Ball" style="width:80%;" />
             </div>
           </div>
         </div>
@@ -119,12 +119,13 @@
         <h4>Rubik's Cube</h4>
         <div class="ui-grid-a">
           <div class="ui-block-a">
-            <p>Rubik's Cube: the answer to the question "how can I show off my useless puzzle skills while making no friends at all?"</p>
+            <p>Rubik's Cube: the answer to the question "how can I show off my useless puzzle skills while making no
+              friends at all?"</p>
           </div>
-          <div class="ui-block-b"> 
+          <div class="ui-block-b">
             <div class="image">
-              <img src="images/rubiks-cube.png" alt="Rubiks Cube" style="width:80%;"/>
-          </div>
+              <img src="images/rubiks-cube.png" alt="Rubiks Cube" style="width:80%;" />
+            </div>
           </div>
         </div>
       </div>
@@ -135,10 +136,10 @@
           <div class="ui-block-a">
             <p>Learn to use The Force and these action-packed fighters won't stand a chance!</p>
           </div>
-          <div class="ui-block-b"> 
+          <div class="ui-block-b">
             <div class="image">
               <img src="images/storm-trooper.png" alt="Storm Trooper" style="width:80%;" />
-          </div>
+            </div>
           </div>
         </div>
       </div>
@@ -149,9 +150,9 @@
           <div class="ui-block-a">
             <p>Use it as a pin coushin or a cuddly companion for when you're cold and sad.</p>
           </div>
-          <div class="ui-block-b"> 
+          <div class="ui-block-b">
             <div class="image float-right">
-              <img src="images/knitting-monkey.png" alt="Knitting Monkey" style="width:80%;"/>
+              <img src="images/knitting-monkey.png" alt="Knitting Monkey" style="width:80%;" />
             </div>
           </div>
         </div>
@@ -163,10 +164,10 @@
           <div class="ui-block-a">
             <p>The hat doubles their size! Her Majesty The Queen endorses these tiny yellow goofballs. Fun for some.</p>
           </div>
-          <div class="ui-block-b"> 
+          <div class="ui-block-b">
             <div class="image float-right">
               <img src="images/buckingham-minion.png" alt="Buckingham Minion" style="width:80%;" />
-              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -185,29 +186,81 @@
     </div>
   </div>
 
-    <!-- PAGE Location page -->
-    <div id="location" data-role="page" data-theme="b">
-      <header data-role="header">
-        <h1>Location</h1>
-      </header>
-      <div data-role="content">
-        <h2>This is our location page!</h2>
-        <p>We're currently building transportation directions into our webapp, so stay tuned and check back soon!</p>
-      </div>
-      <!-- footer -->
-      <div data-role="footer" data-position="fixed">
-        <div data-role="navbar" class="ui-state-persist">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#contact-us">Contact Us</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#location" class="ui-state-persist">Location</a></li>
-          </ul>
-        </div><!-- /navbar -->
-      </div>
-      <!-- footer -->
+  <!-- PAGE Location page -->
+  <div id="location" data-role="page" data-theme="b">
+    <header data-role="header">
+      <h1>Location</h1>
+    </header>
+    <div data-role="content">
+      <h2>This is our location page!</h2>
+      <button onclick="getLocation()">Find Me</button>
+
+      <p id="userLocation"></p>
+
+      <script>
+        var x = document.getElementById("userLocation");
+
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+
+        function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+        }
+      </script>
+      <!--       <button onclick="getLocation()">Find Me</button>
+      <p id="userLocation"></p>
+      <script>
+        var x = document.getElementById("userLocation");
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+          }
+          else { x.innerHTML = "Geolocation is not supported by this browser."; }
+        }
+        function showPosition(position) {
+          x.innerHTML = "test"
+          //"Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude;
+          // document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
+        }
+        function showError(error) {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              x.innerHTML = "User denied the request for Geolocation."
+              break;
+            case error.POSITION_UNAVAILABLE:
+              x.innerHTML = "Location information is unavailable."
+              break;
+            case error.TIMEOUT:
+              x.innerHTML = "The request to get user location timed out."
+              break;
+            case error.UNKNOWN_ERROR:
+              x.innerHTML = "An unknown error occurred."
+              break;
+          }
+        }
+      </script> -->
     </div>
+    <!-- footer -->
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar" class="ui-state-persist">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#contact-us">Contact Us</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#location" class="ui-state-persist">Location</a></li>
+        </ul>
+      </div><!-- /navbar -->
+    </div>
+    <!-- footer -->
+  </div>
 
 </body>
+
 
 </html>
