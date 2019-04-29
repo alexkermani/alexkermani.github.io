@@ -1,8 +1,8 @@
-var CACHE_VERSION = 'app-v2';
+var CACHE_VERSION = 'app-v3';
 var CACHE_FILES = [
     './images/*',
     'app.js',
-    './assets/css/main.css'
+    './assets/css/*'
 ];
 
 self.addEventListener('install', event => {
