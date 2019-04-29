@@ -1,17 +1,17 @@
-var CACHE_VERSION = 'app-v3';
+var CACHE_VERSION = 'app-v4';
 var CACHE_FILES = [
-    './images/*',
+    'images/*',
     'app.js',
-    './assets/css/*'
+    'assets/css/*'
 ];
 
 self.addEventListener('install', event => {
-    console.log('SW installed');
+    console.log('Success - Installed SW');
     event.waitUntil(
         caches
         .open(CACHE_VERSION)
         .then(cache => {
-            console.log('SW caching files');
+            console.log('SW: Caching files...');
             cache.addAll(CACHE_FILES)
         })
         .then(() => self.skipWaiting())
@@ -19,13 +19,13 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-    console.log('SW activated');
+    console.log('Success - Activated SW');
     event.waitUntil(
         caches.keys().then(keyNames => {
             return Promise.all(
                 keyNames.map(key => {
                     if(key !== CACHE_VERSION) {
-                        console.log('SW clearing old caches');
+                        console.log('Clearing old caches...');
                         return caches.delete(key);
                     }
                 })
