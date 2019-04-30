@@ -46,20 +46,20 @@
 		</div>
 	</div>
 
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="app.js"></script>
+	<script>
+		var bgArray = [
+			'images/plain-white-background.jpg',
+			'images/lightblue.jpg',
+			'images/lightgold.jpg'
+		]
+		$('#background-image').on('change', function () {
+			value = $(this).val() - 1;
+			$('#main').css({ 'background-image': 'url(' + bgArray[value] + ')' });
+		});
+	</script>
+	
 </body>
-
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="app.js"></script>
-<script>
-	var bgArray = [
-		'images/plain-white-background.jpg',
-		'images/lightblue.jpg',
-		'images/lightgold.jpg'
-	]
-	$('#background-image').on('change', function () {
-		value = $(this).val() - 1;
-		$('#main').css({ 'background-image': 'url(' + bgArray[value] + ')' });
-	});
-</script>
 
 </html>
