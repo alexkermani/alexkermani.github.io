@@ -1,10 +1,10 @@
 var CACHE_VERSION = 'app-v6';
 var CACHE_FILES = [
     '/',
-    'images/lightblue.jpg',
-    'images/lightgold.jpg',
-    'app.js',
-    'assets/css/'
+    '/images/lightblue.jpg',
+    '/images/lightgold.jpg',
+    '/app.js',
+    '/assets/css/'
 ];
 
 self.addEventListener('install', event => {
