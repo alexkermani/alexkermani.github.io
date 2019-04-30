@@ -213,21 +213,8 @@
             "<br>Longitude: " + position.coords.longitude;
         }
       </script>
-      <!--       <button onclick="getLocation()">Find Me</button>
-      <p id="userLocation"></p>
-      <script>
-        var x = document.getElementById("userLocation");
-        function getLocation() {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition, showError);
-          }
-          else { x.innerHTML = "Geolocation is not supported by this browser."; }
-        }
-        function showPosition(position) {
-          x.innerHTML = "test"
-          //"Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude;
-          // document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
-        }
+
+      <!--
         function showError(error) {
           switch (error.code) {
             case error.PERMISSION_DENIED:
