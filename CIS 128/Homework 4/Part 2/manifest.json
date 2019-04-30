@@ -1,0 +1,12 @@
+{
+    "short_name": "MyApp",
+    "name": "My great App",
+    "icons": [
+        {
+            "src": "images/favicon.ico",
+            "type": "image/ico",
+            "sizes": "48x48"
+        }
+    ],
+    "start_url": "index.html"
+}
