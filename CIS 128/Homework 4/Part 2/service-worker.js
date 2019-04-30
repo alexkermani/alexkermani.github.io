@@ -1,5 +1,6 @@
-var CACHE_VERSION = 'app-v5';
+var CACHE_VERSION = 'app-v6';
 var CACHE_FILES = [
+    '/',
     'images/lightblue.jpg',
     'images/lightgold.jpg',
     'app.js',
