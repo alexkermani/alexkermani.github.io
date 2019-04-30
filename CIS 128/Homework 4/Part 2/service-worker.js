@@ -1,9 +1,11 @@
 var CACHE_VERSION = 'app-v11';
 var CACHE_FILES = [
+    'index.html',
     'images/lightblue.jpg',
     'images/lightgold.jpg',
+    'images/plain-white-background.jpg',
     'app.js',
-    //'assets/css/'
+    'assets/css/main.css'
 ];
 
 self.addEventListener('install', event => {
