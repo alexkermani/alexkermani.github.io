@@ -1,7 +1,7 @@
 var CACHE_VERSION = 'app-v9';
 var CACHE_FILES = [
     //'/',
-    '/images/lightblue.jpg',
+    'images/lightblue.jpg',
     //'/images/lightgold.jpg',
     //'/app.js',
     //'/assets/css/'
