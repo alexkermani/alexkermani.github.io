@@ -1,8 +1,9 @@
 var CACHE_VERSION = 'app-v4';
 var CACHE_FILES = [
-    'images/*',
+    'images/lightblue.jpg',
+    'images/lightgold.jpg',
     'app.js',
-    'assets/css/*'
+    'assets/css/'
 ];
 
 self.addEventListener('install', event => {
@@ -35,7 +36,7 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-    console.log('SW fetching');
+    console.log('SW: Fetching files...');
     event.respondWith(
         fetch(event.request).catch(() => caches.match(event.request))
     );
