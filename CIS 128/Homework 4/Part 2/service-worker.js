@@ -1,10 +1,10 @@
-var CACHE_VERSION = 'app-v8';
+var CACHE_VERSION = 'app-v9';
 var CACHE_FILES = [
-    /* '/',
+    //'/',
     '/images/lightblue.jpg',
-    '/images/lightgold.jpg',
-    '/app.js',
-    '/assets/css/' */
+    //'/images/lightgold.jpg',
+    //'/app.js',
+    //'/assets/css/'
 ];
 
 self.addEventListener('install', event => {
