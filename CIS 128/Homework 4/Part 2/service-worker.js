@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'app-v6';
+var CACHE_VERSION = 'app-v7';
 var CACHE_FILES = [
     '/',
     '/images/lightblue.jpg',
