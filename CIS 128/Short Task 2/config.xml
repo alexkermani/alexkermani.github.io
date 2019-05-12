@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+xmlns:gap = "http://phonegap.com/ns/1.0"
+id = "com.kermanis.testdomainnevertoexisteverinhistory"
+version = "1.0.0">
+<access origin="*" />
+<name>Short Task 2</name>
+<description>CIS 128 Short Task 2</description>
+<author href="https://github.com/alexkermani/"
+email="alex.kermani@my.smccd.edu">Alex Kermani
+</author>
+<plugin name="cordova-plugin-whitelist" source="npm" />
+</widget>
